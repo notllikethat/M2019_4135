@@ -36,4 +36,4 @@ analysis_function <- function(dat_fr, row_selection, column_selection,
 
 analysis_function(iris, c(1:100), c(2:5),  mean, 'Species')
 analysis_function(airquality, c(93:153), c(1, 3, 4, 5), mean, 'Month')
-analysis_function(mtcars, 1:25, c("disp", "hp", "carb"), sd, 'cyl')
+analysis_function(mtcars, 1:25, c('disp', 'hp', 'carb', 'cyl'), sd, 'cyl')
