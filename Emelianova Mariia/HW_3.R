@@ -23,7 +23,7 @@ analysis_function <- function(dat_fr, row_selection, column_selection,
   
   ## We need to apply our calculation function to all parts of subsetted data
   final_list <- list(c(final_list, 
-                       lapply(split(subset, 
+                       lapply(split(subsetted_dat_fr, 
                                     as.factor(subsetted_dat_fr[ , split_argument]), 
                                     drop = T), 
                               function(x) {lapply(x, type_analysis, calculation_function)})))
