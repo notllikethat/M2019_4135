@@ -31,16 +31,18 @@ gapminder <- gapminder
 gapminder %>%
   filter(year == 2007) %>% 
   ggplot(aes(gdpPercap, lifeExp, colour = continent, size = pop)) +
-  geom_point() 
+  geom_point() + 
+  scale_x_log10() 
 
 # Scatter+Line at one plot for mean LifeExp
 
 gapminder %>%
   group_by(continent, year) %>%
-  summarise(mean_lifeExp = mean(lifeExp)) %>%
-  ggplot(aes(x = year, y = mean_lifeExp, color = continent)) +
+  summarise(meanlifeExp = mean(lifeExp)) %>%
+  ggplot(aes(x = year, y = meanlifeExp, color = continent)) +
   geom_line() + 
-  geom_point(shape = 21, size = 2, aes(fill = continent))
+  geom_point(shape = 21, size = 2, aes(fill = continent)) +
+  ylim(0, 80)
 
 # BAR PLOTS
 
